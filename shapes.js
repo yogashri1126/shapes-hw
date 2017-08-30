@@ -9,22 +9,24 @@ function Shape(get_type){
 	}
 	console.log("Step 4 below:")
 	console.log(get_type)
-	console.log("When I do Shape.get_type:")
-	console.log(Shape.get_type)
+	
+	
 	return get_type
 	
 }
 
+console.log("When I do Shape.get_type:")
+console.log(shape.get_type)
 //Question 4
 //Whenever I do "Shape.get_type I get undefined. I think this happens because for a 
-//constructor function, I would not be able to use .getPrototypeOf
+//constructor function, I would not be able to use .getPrototypeOf. I instead did Shape.prototype.get_type
 
 Shape.prototype.get_type = function(){
     return this.constructor;
     console.log(this.constructor)
 }
 
-console.log(shape)
+console.log(Shape.prototype.get_type)
 
 //Steps 2 & 3
 
@@ -36,7 +38,9 @@ function Triangle(side1, side2, side3){
 	this.side3= side3
 
 }
+console.log("triangle:")
 console.log(triangle)
+
 
 var square = new Square(5,5,5,5)
 
@@ -49,6 +53,7 @@ function Square(side1, side2, side3, side4)
 	this.side4= side4
 }
 
+console.log("square")
 console.log(square)
 
 var pentagon= new Pentagon(5,5,5,5,5)
@@ -62,6 +67,7 @@ function Pentagon(side1, side2, side3, side4, side5)
 	this.side5= side5
 }
 
+console.log("pentagon")
 console.log(pentagon)
 
 //Step 4
@@ -76,8 +82,13 @@ question4=Object.getPrototypeOf(Shape)
 
 console.log(shape.prototype.constructor)
 
+
 console.log("Set prototype of triangle:")
 console.log(homework)
+
+console.log("triangle get type:")
+console.log(triangle.get_type)
+
 console.log("Set prototype of square:")
 console.log(homework2)
 console.log("Set prototype of pentagon:")
