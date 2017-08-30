@@ -84,11 +84,12 @@ function Square(side1, side2, side3, side4)
 console.log("square")
 console.log(square)
 console.log(" ")
+square.prototype= new Shape()
 Square.prototype= new Shape()
 
 //Reporting the instance of a square to Square
-square.prototype= new Shape(Square)
-//square.prototype.constructor= Square <--THIS SAYS UNDEFINED FOR SOME REASON. HENCE ABOVE CODE LINE 90
+//square.prototype= new Shape(Square)
+square.prototype.constructor= Square //<--THIS SAYS UNDEFINED FOR SOME REASON. HENCE ABOVE CODE LINE 90
 
 square.get_type = function(){
 
@@ -110,11 +111,12 @@ function Pentagon(side1, side2, side3, side4, side5)
 console.log("pentagon")
 console.log(pentagon)
 console.log(" ")
+pentagon.prototype= new Shape()
 Pentagon.prototype= new Shape()
 
 //Reporting the instance of a pentagon to Pentagon
-pentagon.prototype= new Shape(Pentagon)
-//pentagon.prototype.constructor= Pentagon <--THIS SAYS UNDEFINED FOR SOME REASON. HENCE ABOVE CODE LINE 116
+//pentagon.prototype= new Shape(Pentagon)
+pentagon.prototype.constructor= Pentagon //<--THIS SAYS UNDEFINED FOR SOME REASON. HENCE ABOVE CODE LINE 116
 
 pentagon.get_type = function(){
 
