@@ -58,7 +58,8 @@ console.log(" ")
 Triangle.prototype= new Shape()
 
 //Reporting the instance of a triangle to Triangle
-triangle.prototype= new Shape(Triangle)
+//triangle.prototype= new Shape(Triangle)
+triangle.prototype.constructor= Triangle
 
 //I'm having trouble getting this to return the type of function being Triangle instead of just Function
 triangle.get_type = function(){
@@ -86,8 +87,14 @@ console.log(" ")
 Square.prototype= new Shape()
 
 //Reporting the instance of a square to Square
-square.prototype= new Shape(Square)
-console.log(square.prototype)
+//square.prototype= new Shape(Square)
+square.prototype.constructor= Square
+
+square.get_type = function(){
+
+    return this.constructor;
+    console.log(this.constructor)
+}
 
 var pentagon= new Pentagon(5,5,5,5,5)
 function Pentagon(side1, side2, side3, side4, side5)
@@ -106,7 +113,14 @@ console.log(" ")
 Pentagon.prototype= new Shape()
 
 //Reporting the instance of a pentagon to Pentagon
-pentagon.prototype= new Shape(Pentagon)
+//pentagon.prototype= new Shape(Pentagon)
+pentagon.prototype.constructor= Pentagon
+
+pentagon.get_type = function(){
+
+    return this.constructor;
+    console.log(this.constructor)
+}
 //Step 4
 
 homework= Object.setPrototypeOf(triangle, Shape)
