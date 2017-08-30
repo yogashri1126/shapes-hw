@@ -87,8 +87,8 @@ console.log(" ")
 Square.prototype= new Shape()
 
 //Reporting the instance of a square to Square
-//square.prototype= new Shape(Square)
-square.prototype.constructor= Square
+square.prototype= new Shape(Square)
+//square.prototype.constructor= Square <--THIS SAYS UNDEFINED FOR SOME REASON. HENCE ABOVE CODE LINE 90
 
 square.get_type = function(){
 
@@ -113,8 +113,8 @@ console.log(" ")
 Pentagon.prototype= new Shape()
 
 //Reporting the instance of a pentagon to Pentagon
-//pentagon.prototype= new Shape(Pentagon)
-pentagon.prototype.constructor= Pentagon
+pentagon.prototype= new Shape(Pentagon)
+//pentagon.prototype.constructor= Pentagon <--THIS SAYS UNDEFINED FOR SOME REASON. HENCE ABOVE CODE LINE 116
 
 pentagon.get_type = function(){
 
